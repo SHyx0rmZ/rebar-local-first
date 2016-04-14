@@ -18,9 +18,10 @@ make_vsn(Dir) ->
 -spec transform(tuple()) -> tuple().
 
 transform({ local_then_git, Path, Repository, Version }) ->
-    case file:read_file_info(Path) of
+    AbsolutePath = filename:absname(Path),
+    case file:read_file_info(AbsolutePath) of
         { ok, _ } ->
-            { git, "file://" ++ Path, Version };
+            { git, AbsolutePath, Version };
         { error, _ } ->
             { git, Repository, Version }
     end.
