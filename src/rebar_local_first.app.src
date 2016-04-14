@@ -1,0 +1,20 @@
+{ application, rebar_local_first,
+  [
+    { description, "Plugin to first try and resolve dependencies locally" },
+    { vsn, "0.1.0" },
+    { registered, [] },
+    { applications,
+      [
+        kernel,
+        stdlib
+      ]
+    },
+    { env, [] },
+    { modules,
+      [
+        rebar_local_first,
+        rebar_local_first_resource
+      ]
+    }
+  ]
+}.

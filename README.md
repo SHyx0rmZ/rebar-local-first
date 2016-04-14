@@ -1,7 +1,7 @@
-rebar_local_then_git_deps
+rebar_local_first
 =====
 
-A rebar plugin
+Plugin to first try and resolve dependencies locally
 
 Build
 -----
@@ -13,14 +13,6 @@ Use
 
 Add the plugin to your rebar config:
 
-    {plugins, [
-        { rebar_local_then_git_deps, ".*", {git, "git@host:user/rebar_local_then_git_deps.git", {tag, "0.1.0"}}}
-    ]}.
-
-Then just call your plugin directly in an existing application:
-
-
-    $ rebar3 rebar_local_then_git_deps
-    ===> Fetching rebar_local_then_git_deps
-    ===> Compiling rebar_local_then_git_deps
-    <Plugin Output>
+    { plugins, [
+        { rebar_local_first, ".*", { git, "git://github.com/SHyx0rmZ/rebar_local_first.git", { tag, "0.1.0" } } }
+    ] }.
